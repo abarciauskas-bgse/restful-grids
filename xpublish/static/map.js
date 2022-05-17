@@ -162,9 +162,10 @@ const map = new mapboxgl.Map({
 map.on('load', () => {
     map.addSource('ww3-wms', {
         type: 'raster',
-        tileSize: 512, 
+        tileSize: 256, 
         tiles: [
-            '/datasets/ww3/wms/?service=WMS&version=1.3.0&request=GetMap&layers=hs&crs=EPSG:3857&bbox={bbox-epsg-3857}&width=512&height=512&styles=raster/rainbow&colorscalerange=0,5&time=2022-04-12T21:00:00.00',
+            //'http://127.0.0.1:9005/datasets/ww3/wms/?service=WMS&version=1.3.0&request=GetMap&layers=hs&crs=EPSG:3857&bbox={bbox-epsg-3857}&width=512&height=512&styles=raster/rainbow&colorscalerange=0,5&time=2022-04-12T21:00:00.00',
+            'http://127.0.0.1:9005/datasets/ww3/tile/hs/2022-04-12T21:00:00.00/{z}/{x}/{y}',
         ]
     });
 

@@ -1,6 +1,7 @@
 # Run with `uvicorn --port 9005 main:app --reload`
 from xpublish.routers import base_router, zarr_router
 from fastapi.staticfiles import StaticFiles
+from fastapi.middleware.cors import CORSMiddleware
 
 from demo_rest import DemoRest
 from edr_router import edr_router
@@ -23,7 +24,10 @@ rest = DemoRest(
 )
 
 app = rest.app
-
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=['*']
+)
 app.description = "Hacking on xpublish during the IOOS Code Sprint"
 app.title = "IOOS xpublish"
 
