@@ -23,6 +23,9 @@ def dataset_map():
     datasets = pangeo_forge_datasets_map()
     datasets["ww3"] = "ww3-stub"
     datasets["gfs"] = "https://ioos-code-sprint-2022.s3.amazonaws.com/gfs-wave.zarr"
+    # datasets["mursst"] = "https://mur-sst.s3.amazonaws.com/zarr-v1" # too slow to load?
+    # datasets["daymet-zarr-pr"] = "https://daymeteuwest.blob.core.windows.net/daymet-zarr/annual/pr.zarr"
+    # datasets["terraclimate"] = "https://cpdataeuwest.blob.core.windows.net/cpdata/raw/terraclimate/4000m/raster.zarr"
 
     return datasets
 
