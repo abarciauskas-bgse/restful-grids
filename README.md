@@ -48,7 +48,13 @@ We have an example notebook in the `/examples` directory, which can be run using
 ## Running This Work-In-Progress
 
 Once you install your environment, you can run your local server with the:
-- Wave Watch 3 (ww3) dataset, which can be downloaded [here]()
+- Wave Watch 3 (ww3) dataset, which can be downloaded via:
+
+```bash
+mkdir datasets/
+aws s3 cp s3://ioos-code-sprint-2022/ww3_72_east_coast_2022041112.nc datasets/
+```
+
 - Global Forecast System (GFS) in Zarr format hosted on the cloud
 
 Once you have your data, use following steps:
@@ -71,10 +77,11 @@ INFO:     Waiting for application startup.
 INFO:     Application startup complete.
 ```
 
-When you go to the web address, you you will see a page specifying which datasets are available
+When you go to the web address, you you will see a page specifying which datasets are available - these are loaded from pangeo-forge, see `xpublish/demo_rest.py`.
 
-```
-["ww3","gfs"]
+```json
+# should this be updated with pangeo forge datasets?
+["ww3", "gfs"]
 ```
 
 We can look at the GFS dataset, by adding `/datasets/gfs` to the url, which results in a web-rendered version of the dataset
